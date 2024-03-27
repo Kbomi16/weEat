@@ -22,7 +22,7 @@ section {
   border-radius: 25px;
   box-shadow: 0 0 10px -5px rgb(0, 0, 0);
   overflow: scroll;
-  padding: 50px;
+  padding: 0 50px 20px;
 }
 
 footer button {
@@ -42,10 +42,15 @@ footer button:hover {
   display: flex;
   flex: row;
   justify-content: space-between;
+  position: fixed;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 30px 0;
 }
 .table-header span {
+  color: #fd6f22;
+  font-weight: 800;
   font-size: 1.2rem;
-  margin-bottom: 20px;
 }
 .table-header span:nth-child(1) {
   flex-basis: 100px;
@@ -61,6 +66,9 @@ footer button:hover {
 }
 .table-header span:nth-child(5) {
   flex-basis: 45px;
+}
+#restaurant-list {
+  margin-top: 70px;
 }
 .restaurant-el {
   width: 1200px;

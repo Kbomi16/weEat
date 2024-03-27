@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <h3>${restaurant.title}</h3>
                   <p class='famous-menu'>${restaurant["famous-menu"]}</p>
                   <p class='reference'>${restaurant.reference}</p>
-                  <button class="link-btn" onclick="location.href='${restaurant.link}'" target="_blank">🤤</button>
+                  <button class="link-btn" onclick="window.open('${restaurant.link}')">🤤</button>
               `;
         restaurantList.appendChild(restaurantEl);
       });
