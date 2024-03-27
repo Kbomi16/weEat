@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "TTHakgyoansimKkokkomaR";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimKkokkomaR.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section {
+  width: 1200px;
+  height: 500px;
+  margin-top: 20px;
+  border: solid 1px black;
+}
+
+footer button {
+  margin-top: 60px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+}
+footer button:hover {
+  transform: translateY(5px);
+}
