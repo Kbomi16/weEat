@@ -5,6 +5,43 @@
 
 * {
   font-family: 'AppleSDGothicNeoL';
+  font-family: "TTHakgyoansimKkokkomaR";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimKkokkomaR.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+section::-webkit-scrollbar {
+  display: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section {
+  width: 1200px;
+  height: 500px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 0 10px -5px rgb(0, 0, 0);
+  overflow: scroll;
+  padding: 50px;
+}
+
+footer button {
+  margin-top: 30px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+}
+footer button:hover {
+  transform: translateY(5px);
 }
 .table-header {
   width: 1200px;
@@ -12,19 +49,48 @@
   flex: row;
   justify-content: space-between;
 }
+.table-header span {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.table-header span:nth-child(1) {
+  flex-basis: 100px;
+}
+.table-header span:nth-child(2) {
+  flex-basis: 220px;
+}
+.table-header span:nth-child(3) {
+  flex-basis: 300px;
+}
+.table-header span:nth-child(4) {
+  flex-basis: 550px;
+}
+.table-header span:nth-child(5) {
+  flex-basis: 45px;
+}
 .restaurant-el {
   width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+}
+.type {
+  flex-basis: 100px;
 }
 h3 {
-  flex-grow: 1;
+  flex-basis: 220px;
 }
 .reference {
-  flex-grow: 1;
-  text-align: left;
+  flex-basis: 550px;
 }
 .famous-menu {
-  flex-grow: 1;
+  flex-basis: 300px;
+}
+.link-btn {
+  border: none;
+  background-color: #fff;
+  font-size: 26px;
+  cursor: pointer;
 }

@@ -1,3 +1,5 @@
+const section = document.querySelector("main section");
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch("EuljiroJMT.json")
     .then((response) => response.json())
@@ -8,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const restaurantEl = document.createElement("div");
         restaurantEl.classList.add("restaurant-el");
         restaurantEl.innerHTML = `
-        <p>${restaurant.type}</p>
+        <p class="type">${restaurant.type}</p>
               <h3>${restaurant.title}</h3>
                   <p class='famous-menu'>${restaurant["famous-menu"]}</p>
                   <p class='reference'>${restaurant.reference}</p>
-                  <button onclick="${restaurant.link}" target="_blank">링크</button>
+                  <button class="link-btn" onclick="location.href='${restaurant.link}'" target="_blank">🤤</button>
               `;
         restaurantList.appendChild(restaurantEl);
       });
