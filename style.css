@@ -33,6 +33,7 @@ footer button {
   background-color: #fff;
   border: none;
   padding: 0;
+  margin-top: 60px;
 }
 footer button:hover {
   transform: translateY(5px);
