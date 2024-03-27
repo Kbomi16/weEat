@@ -1,4 +1,4 @@
-const section = document.querySelector("main section");
+const randomBtn = document.querySelector(".random-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch("EuljiroJMT.json")
@@ -20,4 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })
     .catch((error) => console.error("Error fetching JSON:", error));
+});
+
+randomBtn.addEventListener("click", () => {
+  const els = document.querySelectorAll(".restaurant-el");
+  els.forEach((element) => {
+    if (element.classList.contains("active")) {
+      element.classList.remove("active");
+    }
+  });
+
+  const randomNum = Math.floor(Math.random() * els.length) + 1;
+  els[randomNum].classList.add("active");
+  const activeEl = document.querySelector(".active");
+
+  activeEl.scrollIntoView({ behavior: "smooth", block: "center" });
 });

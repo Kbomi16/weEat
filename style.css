@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'AppleSDGothicNeoL';
+  font-family: "AppleSDGothicNeoL";
   src: url("./assets/font/AppleSDGothicNeoL.ttf") format("truetype");
 }
 
 * {
-  font-family: 'AppleSDGothicNeoL';
+  font-family: "AppleSDGothicNeoL";
 }
 section::-webkit-scrollbar {
   display: none;
@@ -73,7 +73,6 @@ footer button:hover {
   margin-top: 70px;
 }
 .restaurant-el {
-  width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -97,4 +96,28 @@ h3 {
   background-color: #fff;
   font-size: 26px;
   cursor: pointer;
+}
+
+.active {
+  border: solid 5px #fd6f22;
+  z-index: 1;
+  border-radius: 25px;
+  padding: 0 15px;
+  animation: active 0.5s infinite;
+}
+
+@keyframes active {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(105%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.active h3 {
+  color: #fd6f22;
 }
