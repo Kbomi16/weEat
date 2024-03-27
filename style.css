@@ -5,7 +5,9 @@
   font-weight: normal;
   font-style: normal;
 }
-
+section::-webkit-scrollbar {
+  display: none;
+}
 body {
   display: flex;
   justify-content: center;
@@ -16,12 +18,15 @@ body {
 section {
   width: 1200px;
   height: 500px;
-  margin-top: 20px;
-  border: solid 1px black;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 0 10px -5px rgb(0, 0, 0);
+  overflow: scroll;
+  padding: 50px;
 }
 
 footer button {
-  margin-top: 60px;
+  margin-top: 30px;
   cursor: pointer;
   color: #fff;
   border: none;
@@ -31,4 +36,55 @@ footer button {
 }
 footer button:hover {
   transform: translateY(5px);
+}
+.table-header {
+  width: 1200px;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+.table-header span {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.table-header span:nth-child(1) {
+  flex-basis: 100px;
+}
+.table-header span:nth-child(2) {
+  flex-basis: 220px;
+}
+.table-header span:nth-child(3) {
+  flex-basis: 300px;
+}
+.table-header span:nth-child(4) {
+  flex-basis: 550px;
+}
+.table-header span:nth-child(5) {
+  flex-basis: 45px;
+}
+.restaurant-el {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+}
+.type {
+  flex-basis: 100px;
+}
+h3 {
+  flex-basis: 220px;
+}
+.reference {
+  flex-basis: 550px;
+}
+.famous-menu {
+  flex-basis: 300px;
+}
+.link-btn {
+  border: none;
+  background-color: #fff;
+  font-size: 26px;
+  cursor: pointer;
 }
