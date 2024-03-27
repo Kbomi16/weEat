@@ -1,9 +1,10 @@
 @font-face {
-  font-family: "TTHakgyoansimKkokkomaR";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimKkokkomaR.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'AppleSDGothicNeoL';
+  src: url("./assets/font/AppleSDGothicNeoL.ttf") format("truetype");
+}
+
+* {
+  font-family: 'AppleSDGothicNeoL';
 }
 section::-webkit-scrollbar {
   display: none;
