@@ -1,0 +1,24 @@
+.table-header {
+  width: 1200px;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+.restaurant-list {
+}
+.restaurant-el {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+h3 {
+  flex-grow: 1;
+}
+.reference {
+  flex-grow: 1;
+  text-align: left;
+}
+.famous-menu {
+  flex-grow: 1;
+}
