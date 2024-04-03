@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <h3>${restaurant.title}</h3>
                   <p class='famous-menu'>${restaurant["famous-menu"]}</p>
                   <p class='reference'>${restaurant.reference}</p>
-                  <button class="link-btn" onclick="window.open('${restaurant.link}')">🤤</button>
-              `;
+                  <button class="link-btn" onclick="window.open('${restaurant.link}')">🤤</button>`;
         restaurantList.appendChild(restaurantEl);
       });
     })
@@ -30,7 +29,7 @@ randomBtn.addEventListener("click", () => {
     }
   });
 
-  const randomNum = Math.floor(Math.random() * els.length) + 1;
+  const randomNum = Math.floor(Math.random() * els.length);
   els[randomNum].classList.add("active");
   const activeEl = document.querySelector(".active");
 
