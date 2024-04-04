@@ -39,9 +39,12 @@ fetch("EuljiroJMT.json")
   .then((data) => {
     data.forEach((place) => {
       const searchTitle = place.title;
+      const link = place.link;
 
       // 제목으로 장소를 검색
-      ps.keywordSearch(searchTitle, placesSearchCB);
+      ps.keywordSearch(searchTitle, (data, status, pagination) => {
+        placesSearchCB(data, status, pagination, link);
+      });
       console.log(searchTitle);
     });
   })
@@ -50,14 +53,14 @@ fetch("EuljiroJMT.json")
   });
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-function placesSearchCB(data, status, pagination) {
+function placesSearchCB(data, status, pagination, link) {
   if (status === kakao.maps.services.Status.OK) {
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
     // LatLngBounds 객체에 좌표를 추가합니다
     const bounds = new kakao.maps.LatLngBounds();
 
     for (const i = 0; i < data.length; i++) {
-      displayMarker(data[i]);
+      displayMarker(data[i], link);
       bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
     }
 
@@ -67,16 +70,15 @@ function placesSearchCB(data, status, pagination) {
 }
 
 // 지도에 마커를 표시하는 함수입니다
-function displayMarker(place) {
+function displayMarker(place, link) {
   // 마커를 생성하고 지도에 표시합니다
   const marker = new kakao.maps.Marker({
     map: map,
     position: new kakao.maps.LatLng(place.y, place.x),
   });
 
-  // 마커에 마우스 호버 이벤트를 등록합니다
+  // 마커에 마우스 호버 이벤트
   kakao.maps.event.addListener(marker, "mouseover", function () {
-    // 인포윈도우를 열고 내용을 설정합니다
     infowindow.setContent(
       '<div style="padding:0.1rem 2.8rem; font-size: 12px; text-align:center;">' +
         place.place_name +
@@ -85,9 +87,12 @@ function displayMarker(place) {
     infowindow.open(map, marker);
   });
 
-  // 마커에 마우스 아웃 이벤트를 등록합니다
   kakao.maps.event.addListener(marker, "mouseout", function () {
-    // 인포윈도우를 닫습니다
     infowindow.close();
+  });
+  // 클릭 이벤트 핸들러 내부에서 link 변수를 사용할 수 있도록 클로저로 캡쳐
+  kakao.maps.event.addListener(marker, "click", function () {
+    window.location.href = link;
+    infowindow.open(map, marker);
   });
 }
