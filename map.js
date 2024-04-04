@@ -74,12 +74,20 @@ function displayMarker(place) {
     position: new kakao.maps.LatLng(place.y, place.x),
   });
 
-  // 마커에 클릭이벤트를 등록합니다
-  kakao.maps.event.addListener(marker, "click", function () {
-    // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+  // 마커에 마우스 호버 이벤트를 등록합니다
+  kakao.maps.event.addListener(marker, "mouseover", function () {
+    // 인포윈도우를 열고 내용을 설정합니다
     infowindow.setContent(
-      '<div style="padding:5px;font-size:12px;">' + place.place_name + "</div>"
+      '<div style="padding:0.1rem 2.8rem; font-size: 12px; text-align:center;">' +
+        place.place_name +
+        "</div>"
     );
     infowindow.open(map, marker);
+  });
+
+  // 마커에 마우스 아웃 이벤트를 등록합니다
+  kakao.maps.event.addListener(marker, "mouseout", function () {
+    // 인포윈도우를 닫습니다
+    infowindow.close();
   });
 }
