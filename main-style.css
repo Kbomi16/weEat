@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "AppleSDGothicNeoL";
+  src: url("./assets/font/AppleSDGothicNeoL.ttf") format("truetype");
+}
+
+* {
+  font-family: "AppleSDGothicNeoL";
+}
+
+header {
+  margin-top: 10px;
+}
+section::-webkit-scrollbar {
+  display: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#map {
+  margin: 45px 0 15px 0;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 0 10px -5px rgb(0, 0, 0);
+}
+
+footer button {
+  margin-top: 30px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin-top: 30px;
+}
+footer button:hover {
+  transform: translateY(5px);
+}

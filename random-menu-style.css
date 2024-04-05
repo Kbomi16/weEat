@@ -9,6 +9,7 @@
 
 header {
   margin-top: 10px;
+  cursor: pointer;
 }
 section::-webkit-scrollbar {
   display: none;
