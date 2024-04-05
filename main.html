@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./random-menu-style.css" />
     <title>weEat</title>
   </head>
   <body>
+
+    <header>
+      <img src="./assets/weeat_logo.png" alt="weEat 로고" />
+    </header>
+
     <div id="map" style="width: 1000px; height: 500px"></div>
     <div id="clickLatlng"></div>
+
+    <footer>
+      <button class="random-btn" onclick="location.href='./random-menu.html'">
+        <img src="./assets/weeat_btn.png" alt="랜덤 버튼" />
+      </button>
+    </footer>
+    
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1041834b19c3a8e5e8a2f4761f7038d3&libraries=services"
