@@ -80,9 +80,7 @@ function displayMarker(place, link) {
   // 마커에 마우스 호버 이벤트
   kakao.maps.event.addListener(marker, "mouseover", function () {
     infowindow.setContent(
-      '<div style="padding:0.1rem 2.8rem; font-size: 12px; text-align:center;">' +
-        place.place_name +
-        "</div>"
+      '<div style="padding:0.1rem 2.8rem; font-size: 12px; text-align:center;">' + place.place_name + "</div>"
     );
     infowindow.open(map, marker);
   });
@@ -92,7 +90,7 @@ function displayMarker(place, link) {
   });
   // 클릭 이벤트 핸들러 내부에서 link 변수를 사용할 수 있도록 클로저로 캡쳐
   kakao.maps.event.addListener(marker, "click", function () {
-    window.location.href = link;
+    window.open(link, "_blank");
     infowindow.open(map, marker);
   });
 }
